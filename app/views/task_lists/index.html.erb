@@ -1,7 +1,15 @@
 <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
-    <h1><%= task_list.name %></h1>
+    <h1><%= task_list.name %>
+      <div class="add-task"><%= link_to '+ Add Task', new_task_list_task_path(task_list) %></div>
+    </h1>
+    <% @tasks.each do |task| %>
+      <% if task.task_list_id == task_list.id %>
+        <%= task.description %><br>
+      <% end %>
+    <% end %>
   </section>
 
 <% end %>
+
