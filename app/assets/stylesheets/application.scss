@@ -88,3 +88,26 @@ main {
 .add-task {
   float: right;
 }
+
+.task-single {
+  border: solid #DCDCDC 2px;
+  padding: 5px;
+  background-color: #EEEEEE;
+}
+
+.notice_successful {
+  border: solid darkgreen 2px;
+  padding: 5px;
+  background-color: #B6D7A8;
+}
+
+.button-create-task {
+  margin-top: 25px;
+  padding: 5px;
+  background-color: #2B78E4;
+  color: white;
+  float: left;
+  border: solid black 2px;
+  box-shadow: 3px 3px 3px black;
+
+}
