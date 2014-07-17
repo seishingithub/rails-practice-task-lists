@@ -1,3 +1,11 @@
+<html>
+<head></head>
+<body>
+<h2>My Lists</h2>
+<% if flash[:notice] %>
+  <p class="notice_successful">Task was created successfully!</p>
+<% end %>
+
 <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
@@ -6,10 +14,17 @@
     </h1>
     <% @tasks.each do |task| %>
       <% if task.task_list_id == task_list.id %>
-        <%= task.description %><br>
+        <div class="task-single">
+          <%= task.description %>
+          (<%= time_ago_in_words(task.due_date) %>)
+        </div>
+        <br>
       <% end %>
     <% end %>
   </section>
 
 <% end %>
+
+</body>
+</html>
 

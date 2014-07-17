@@ -6,10 +6,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task_list = TaskList.find(params[:task_list_id])
     @task = Task.create(task_params)
     if @task.save
-      redirect_to task_lists_path
+      redirect_to root_path, notice: "Task was created successfully!"
     else
       render root_path
     end
@@ -18,8 +17,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    # binding.pry
-    params.require(:task).permit(:description).merge(task_list_id: params[:task_list_id])
+    params.require(:task).permit(:description, :due_date).merge(task_list_id: params[:task_list_id])
   end
 
 end

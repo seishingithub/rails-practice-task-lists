@@ -6,7 +6,8 @@
 
 <%= form_for [@task_list, @task] do |f| %>
   <%= f.text_field :description %><br />
-  <%= f.submit 'Create Task' %>
+  <h4>Due Date</h4>
+  <%= f.date_select :due_date, :use_two_digit_numbers => true %><br>
+  <%= f.submit 'Create Task', class: "button-create-task" %>
   <% end %>
 
-<h4>Due Date</h4>
