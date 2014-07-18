@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to root_path, notice: "Task was created successfully!"
     else
-      render root_path
+      render root_path, notice: "Your task could not be created"
     end
   end
 

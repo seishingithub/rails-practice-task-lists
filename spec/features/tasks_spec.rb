@@ -19,6 +19,10 @@ feature 'Manage Tasks' do
     first(".add-task").click_on "+ Add Task"
     expect(page).to have_content "Description"
     expect(page).to have_content "Due Date"
+    fill_in "task[description]", with: ""
+    within('.notice_error') do
+      expect(page).to have_content "Your task could not be created"
+    end
     fill_in "task[description]", with: "enjoy studying and learning"
 
     due_date = 4.days.from_now
