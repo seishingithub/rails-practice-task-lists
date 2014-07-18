@@ -3,7 +3,7 @@
 <body>
 <h2>My Lists</h2>
 <% if flash[:error] %>
-  <p class="notice_error">Your task could not be created</p>
+  <div class="notice_error"><%= flash[:error] %></div>
 <% end %>
 <% if flash[:notice] %>
   <p class="notice_successful">Task was created successfully!</p>
