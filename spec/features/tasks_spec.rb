@@ -31,7 +31,6 @@ feature 'Manage Tasks' do
     within('.notice_successful') do
       expect(page).to have_content "Task was created successfully!"
     end
-    save_and_open_page
     expect(page).to have_content "4 days"
   end
 end
