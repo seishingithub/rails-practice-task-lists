@@ -3,10 +3,13 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    # @task = @task_list.tasks.new
   end
 
   def create
     @task = Task.create(task_params)
+    # @task = @task_list.tasks.create(task_params)
+
     if @task.save
       redirect_to root_path, notice: "Task was created successfully!"
     else

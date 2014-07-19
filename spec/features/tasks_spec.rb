@@ -37,5 +37,9 @@ feature 'Manage Tasks' do
       expect(page).to have_content "Task was created successfully!"
     end
     expect(page).to have_content "4 days"
+    click_on "Complete"
+    expect(page).to have_no_content "enjoy studying and learning"
   end
+
+
 end

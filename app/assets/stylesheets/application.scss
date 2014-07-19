@@ -113,5 +113,14 @@ main {
   float: left;
   border: solid black 2px;
   box-shadow: 3px 3px 3px black;
-
 }
+
+.button-task-complete {
+    margin-top: 25px;
+    padding: 5px;
+    background-color: #FEFEFE;
+    color: black;
+    float: right;
+    border: solid black 2px;
+    box-shadow: 3px 3px 3px black;
+  }
