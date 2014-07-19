@@ -2,12 +2,7 @@
 <head></head>
 <body>
 <h2>My Lists</h2>
-<% if flash[:error] %>
-  <div class="notice_error"><%= flash[:error] %></div>
-<% end %>
-<% if flash[:notice] %>
-  <p class="notice_successful">Task was created successfully!</p>
-<% end %>
+
 
 
 <% @task_lists.each do |task_list| %>

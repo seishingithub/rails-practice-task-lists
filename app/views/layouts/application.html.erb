@@ -22,6 +22,12 @@
 </header>
 <main>
   <div class="container">
+    <% if flash[:error] %>
+      <div class="notice_error"><%= flash[:error] %></div>
+    <% end %>
+    <% if flash[:notice] %>
+      <p class="notice_successful">Task was created successfully!</p>
+    <% end %>
     <%= yield %>
   </div>
 </main>
