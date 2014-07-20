@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :get_task_list, only: [:new, :create]
+  before_action :get_task_list, only: [:new, :create, :update]
 
   def new
     @task = Task.new
@@ -16,6 +16,12 @@ class TasksController < ApplicationController
       flash.now[:error] = "Your task could not be created"
       render :new
     end
+  end
+
+  def update
+    @task = Task.update(completed:true)
+    # @task = @task_list.tasks.update(completed:true)
+    redirect_to root_path
   end
 
   private

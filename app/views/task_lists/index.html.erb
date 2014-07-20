@@ -13,17 +13,19 @@
     </h1>
     <% @tasks.each do |task| %>
       <% if task.task_list_id == task_list.id %>
-        <div class="task-single">
-          <%= task.description %>
-          (<%= time_ago_in_words(task.due_date) %>)
-        </div>
-        <br>
+        <% if task.completed.nil? %>
+          <div class="task-single">
+            <%= task.description %>
+            (<%= time_ago_in_words(task.due_date) %>)
+            <div class = "button-task-complete"><%= link_to 'Complete', task_list_task_path(task.task_list_id, task), method: :put %></div>
+          </div>
+          <br>
+        <% end %>
       <% end %>
-    <% end %>
-  </section>
+      </section>
 
+    <% end %>
 <% end %>
 
 </body>
 </html>
-
